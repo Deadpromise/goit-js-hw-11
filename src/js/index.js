@@ -42,6 +42,11 @@ function onFormSubmit(e) {
 function loadMoreImg() {
     incrementPage();
     getImgs(searchReq, page).then(result => {
+        if (result.hits.length === 0) {
+            hideLoadBtn();
+            onLoadError();
+            return;
+        };
         buildMarkup(result.hits);
     }).catch(() => {
         onLoadError();
