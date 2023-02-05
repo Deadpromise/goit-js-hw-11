@@ -19,7 +19,7 @@ export default async function getImgs(inputData, page) {
             },
         };
         const response = await axios(config);
-        console.log(response.data);
+        // console.log(response.data);
         // console.log(response.data.totalHits);
         return response.data;
     } catch (error) {
